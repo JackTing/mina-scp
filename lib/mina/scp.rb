@@ -1,6 +1,6 @@
 def scp_transfer(direction, from, to, options = {})
-  remote_prefix = "#{domain!}:"
-  remote_prefix = "#{user}@#{remote_prefix}" if user?
+  remote_prefix = "#{fetch(:domain)}:"
+  remote_prefix = "#{fetch(:user)}@#{remote_prefix}" if user?
   command = "scp"
   command << " -i #{identity_file}" if identity_file?
   command << " -P #{port}" if port?
